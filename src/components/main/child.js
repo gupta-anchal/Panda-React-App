@@ -6,7 +6,7 @@ export default function Child({child}) {
 
     useEffect(() => {
         if(child) {
-            toast("Congratulations, You have " + (child) + " children");
+            toast("Congratulations, Panda have " + (child) + " children");
         }
     }, [child]);
 
