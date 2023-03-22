@@ -1,27 +1,39 @@
 import React, { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './child.css'
+import "../../styles/child.css";
+
+var color = [
+  "lightblue",
+  "lightcyan",
+  "lightgoldenrodyellow",
+  "lightgrey",
+  "lightyellow",
+  "lightpink",
+  "mistyrose",
+  "moccasin",
+  "oldlace",
+  "palegoldenrod",
+  "papayawhip",
+  "wheat",
+  "whitesmoke",
+  "mintcream",
+  "lightsteelblue",
+  "lightsalmon",
+  "khaki",
+  "antiquewhite",
+];
+
 export default function Child({ child }) {
-  var color = [
-    "lightblue",
-    "lightcyan",
-    "lightgoldenrodyellow",
-    "lightgrey",
-    "lightyellow",
-    "lightpink",
-    "mistyrose",
-    "moccasin",
-    "oldlace",
-    "palegoldenrod",
-    "papayawhip",
-    "wheat",
-    "whitesmoke",
-    "mintcream",
-    "lightsteelblue",
-    "lightsalmon",
-    "khaki",
-    "antiquewhite"
+  //destructuring
+
+  const images = [
+    "/image/pandaChild2.gif",
+    "/image/pandaChild3.gif",
+    "/image/pandaChild4.gif",
+    "/image/pandaChild5.gif",
+    "/image/pandaChild6.gif",
+    "/image/pandaChild7.gif",
   ];
 
   useEffect(() => {
@@ -42,7 +54,7 @@ export default function Child({ child }) {
       children.push(
         <img
           className="zoom"
-          src="/image/pandachild.png"
+          src={images[Math.floor(Math.random() * images.length)]}
           alt="pandaChild"
           width="200px"
           height="200px"
