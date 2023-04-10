@@ -29,16 +29,6 @@ export default function Child({ child }) {
 
   const Animal = useSelector((state) => state.animal.value)
 
-
-  const images = [
-    "/image/pandaChild2.gif",
-    "/image/pandaChild3.gif",
-    "/image/pandaChild4.gif",
-    "/image/pandaChild5.gif",
-    "/image/pandaChild6.gif",
-    "/image/pandaChild7.gif",
-  ];
-
   useEffect(() => {
     if (child) {
       toast("Congratulations, " + Animal + " has " + child + " children");
@@ -48,7 +38,9 @@ export default function Child({ child }) {
   }, [child]);
 
   useEffect(() => {
-    toast.info("Welcome to my family, I am " + Animal + " Parent!");
+    toast.info('Welcome to my family, I am ' + Animal + ' Parent!', {
+      position: "top-left"
+    });
   }, []);
 
   const createChild = (child) => {
@@ -57,8 +49,8 @@ export default function Child({ child }) {
       children.push(
         <img
           className="zoom"
-          src={images[Math.floor(Math.random() * images.length)]}
-          alt="pandaChild"
+          src={"/image/"+Animal+"Child.gif"}
+          alt="AnimalChild"
           width="200px"
           height="200px"
           key={i}
