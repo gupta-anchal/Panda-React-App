@@ -4,6 +4,7 @@ import { changeAnimal } from './animalType'
 import '../../styles/animal.css'
 import { reset } from '../main/childCount'
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Animal() {
   const count = useSelector((state) => state.counter.value);

@@ -3,6 +3,7 @@ import Child from './child'
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer, toast } from "react-toastify";
 import { increment, reset } from './childCount'
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Parent() {
 
