@@ -1,7 +1,7 @@
 import "./App.css";
 import Parent from "./components/main/parent.js";
 import NavBar from "./components/navbar/navbar.js";
-import Temperature from "./components/temperature/temperature.js";
+import Animal from "./components/animal/animal.js";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,11 +19,11 @@ function App() {
           {" "}
         </Route>
         <Route
-          path="temperature"
+          path="animal"
           element={
             <>
               <NavBar />
-              <Temperature />
+              <Animal />
             </>
           }
         />

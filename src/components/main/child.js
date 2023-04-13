@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../styles/child.css";
+import { useSelector } from 'react-redux';
 
 var color = [
   "lightblue",
@@ -25,27 +26,21 @@ var color = [
 ];
 
 export default function Child({ child }) {
-  //destructuring
 
-  const images = [
-    "/image/pandaChild2.gif",
-    "/image/pandaChild3.gif",
-    "/image/pandaChild4.gif",
-    "/image/pandaChild5.gif",
-    "/image/pandaChild6.gif",
-    "/image/pandaChild7.gif",
-  ];
+  const Animal = useSelector((state) => state.animal.value)
 
   useEffect(() => {
     if (child) {
-      toast("Congratulations, Panda have " + child + " children");
+      toast("Congratulations, " + Animal + " has " + child + " children");
     }
     document.body.style.background =
       color[Math.floor(Math.random() * color.length)];
   }, [child]);
 
   useEffect(() => {
-    toast.info("Welcome to my family, I am Panda Parent!");
+    toast.info('Welcome to my family, I am ' + Animal + ' Parent!', {
+      position: "top-left"
+    });
   }, []);
 
   const createChild = (child) => {
@@ -54,10 +49,11 @@ export default function Child({ child }) {
       children.push(
         <img
           className="zoom"
-          src={images[Math.floor(Math.random() * images.length)]}
-          alt="pandaChild"
+          src={"/image/"+Animal+"Child.gif"}
+          alt="AnimalChild"
           width="200px"
           height="200px"
+          key={i}
         />
       );
     }
@@ -65,9 +61,9 @@ export default function Child({ child }) {
   };
 
   return (
-    <div class="border border-3 border-success m-5">
+    <div className="border border-3 border-success m-5">
       <div>{createChild(child)}</div>
-      <div class="badge text-bg-warning fs-5 m-4">Panda has {child} child</div>
+      <div className="badge text-bg-warning fs-5 m-4">{Animal} has {child} child</div>
       <ToastContainer />
     </div>
   );
