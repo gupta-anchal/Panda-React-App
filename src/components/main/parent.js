@@ -23,7 +23,7 @@ export default function Parent() {
       </div>
       <button type="button" className="btn btn-primary m-4" onClick={() => dispatch(increment())}>Generate New Child</button>
       <button type="button" className="btn btn-primary m-4" onClick={() => {dispatch(reset()); resetToast();}} hidden={!count}>Reset</button>
-      <Child child={count}/>
+      <Child />
       <ToastContainer />
     </div>
   )
