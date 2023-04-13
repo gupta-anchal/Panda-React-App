@@ -37,6 +37,7 @@ export default function Child() {
     }
     document.body.style.background =
       color[Math.floor(Math.random() * color.length)];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   useEffect(() => {
