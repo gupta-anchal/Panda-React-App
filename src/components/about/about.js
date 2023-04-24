@@ -68,7 +68,7 @@ export default function About() {
           <ErrorMessage error={error}/>
         </div>
       )}
-      {video.map((arr) => {
+      {video?.map((arr) => {
         return (
           <>
             <iframe
