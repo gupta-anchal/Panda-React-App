@@ -28,7 +28,7 @@ export default function About() {
         },
       })
       .then((response) => {
-        // console.log("response", response);
+        console.log("response", response);
         let searchResults =
           response.data.items &&
           response.data.items.map((item) => ({ id: item.id.videoId }));
