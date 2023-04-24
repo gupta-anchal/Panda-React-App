@@ -17,6 +17,7 @@ export default function About() {
     setLoading(true);
     const key = "AIzaSyA3g2pYnwi06wNT4qXseHzZCe0ZULx-Xzo";
 
+    // eslint-disable-next-line no-unused-vars
     const video = await axios
       .get("https://www.googleapis.com/youtube/v3/search", {
         params: {
@@ -47,6 +48,7 @@ export default function About() {
     setLoading(true);
     fetchUserData();
     setvideo(video);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Animal]);
 
   return (
@@ -78,6 +80,7 @@ export default function About() {
               allowFullScreen
               className="p-2 m-1"
             ></iframe>
+            <div className="btn btn-primary" onClick={setvideo()}>Show More</div>
           </>
         );
       })}
