@@ -69,6 +69,7 @@ export default function About() {
         </div>
       )}
       {video?.map((arr) => {
+        console.log("arr.id",arr.id);
         return (
           <>
             <iframe
@@ -80,7 +81,6 @@ export default function About() {
               allowFullScreen
               className="p-2 m-1"
             ></iframe>
-            <div className="btn btn-primary" onClick={setvideo()}>Show More</div>
           </>
         );
       })}
